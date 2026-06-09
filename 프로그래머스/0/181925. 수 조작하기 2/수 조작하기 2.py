@@ -1,6 +1,5 @@
 def solution(numLog):
     result = []
-    
     for i in range(1, len(numLog)):
         if numLog[i-1] + 1 == numLog[i]:
             result.append('w')
