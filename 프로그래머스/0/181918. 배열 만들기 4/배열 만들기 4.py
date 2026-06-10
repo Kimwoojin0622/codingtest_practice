@@ -17,7 +17,6 @@ def solution(arr):
                 # step 3-2. stk의 마지막 원소가 arr[i]보다 크거나 같다면 stk의 마지막 원소를 stk에서 제거한다.
             else:
                 stk.pop()
-                
     return stk
             
             
