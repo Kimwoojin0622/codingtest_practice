@@ -1,5 +1,5 @@
 def solution(num_list):
-    cnt_list = []
+    cnt = 0
     for num in num_list:
         i = 0
         while num != 1:
@@ -8,6 +8,6 @@ def solution(num_list):
             else:
                 num = (num - 1) // 2
             i += 1
-        cnt_list.append(i)
+        cnt = cnt + i
     
-    return sum(cnt_list)
+    return cnt
