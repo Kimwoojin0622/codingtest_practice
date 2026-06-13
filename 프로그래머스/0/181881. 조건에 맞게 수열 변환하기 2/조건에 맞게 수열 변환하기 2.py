@@ -1,17 +1,19 @@
+## ★★★
 def solution(arr):
     cnt = 0
+    
     while True:
-        result = []
-        for i in arr:
-            if i >= 50 and i % 2 == 0:
-                result.append(i / 2)
-            elif i < 50 and i % 2 != 0:
-                result.append(i * 2 + 1)
-            else:
-                result.append(i)
-        if arr == result:
-            return cnt
+        is_Changed = False
+        for i in range(len(arr)):
+            if arr[i] >= 50 and arr[i] % 2 == 0:
+                arr[i] = arr[i] // 2
+                is_Changed = True
+            elif arr[i] < 50 and arr[i] % 2 != 0:
+                arr[i] = arr[i] * 2 + 1
+                is_Changed = True
         
-        arr = result
+        if is_Changed == False:
+            return cnt
         cnt += 1
-    return cnt
+        
+        
