@@ -1,9 +1,9 @@
 def solution(str_list):
-    if 'l' in str_list or 'r' in str_list:
-        for i in range(len(str_list)):
-            if str_list[i] == 'l':
-                return str_list[:i]
-            elif str_list[i] == 'r':
-                return str_list[i + 1:]
-    else:
-        return []
+    for s in str_list:
+        idx = str_list.index(s)
+        if s == 'l':
+            return str_list[:idx]
+        elif s == 'r':
+            return str_list[idx + 1:]
+
+    return []
