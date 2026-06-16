@@ -8,5 +8,5 @@ def solution(strArr):
         slen[length] += 1
     
     # 가장 개수가 많은 그룹의 크기는 그냥 slen의 max값을 구하면 됨
-    result = max(slen)
+    result = max(slen) # O(N)
     return result
