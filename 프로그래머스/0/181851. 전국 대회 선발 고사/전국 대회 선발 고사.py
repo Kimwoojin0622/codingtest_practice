@@ -16,4 +16,17 @@ def solution(rank, attendance):
 
     answer = (temp_list[0] * 10000) + (temp_list[1] * 100) + temp_list[2]
     return answer
+
+# enumerate 버전
+# def solution(rank, attendance):
+#     # [7, 2, 5, 4]인데 얘네의 rank에서의 인덱스가 [1, 2, 3, 4]임 그래서 a = 2, b = 4, c = 3임
+#     # [6, 5, 4] 인데 얘네의 rank에서의 인덱스가 [0, 2, 5] 임 그래서 a = 5, b = 2, c = 0임
+#     temp = []
+#     for i, rnk in enumerate(rank):
+#         if attendance[i]:
+#             temp.append([rnk, i])
+    
+#     temp = sorted(temp)
+#     result = (temp[0][1] * 10000) + (temp[1][1] * 100) + temp[2][1]
+#     return result
     
