@@ -1,9 +1,11 @@
 import math
 def solution(numer1, denom1, numer2, denom2):
-    
+    # step 1. 분모 중 작은 값을 구한다.
     denom = min(denom1, denom2)
     
     is_True = True
+    # step 2. 분모 중 작은 값으로부터 시작해, 공통으로 나눠지는 분모의 값을 구한다.
+    # 구한 뒤, 통분한 분수를 구한다.(약분 전임)
     while is_True:
         if denom % denom1 == 0 and denom % denom2 == 0:
             is_True = False
