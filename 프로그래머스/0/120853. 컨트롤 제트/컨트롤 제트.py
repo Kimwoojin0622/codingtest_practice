@@ -1,16 +1,11 @@
 def solution(s):
-    ssplit = s.split(" ")
-    for i in range(len(ssplit)):
-        if ssplit[i] == 'Z':
-            ssplit[i] = 2000
-    
-    temp, result = 0, 0
-    
-    for data in ssplit:
-        if int(data) < 1000:
-            temp = int(data)
-            result = result + int(data)
+    temp = s.split(" ")
+    result = 0
+    # Z는 0번 인덱스부터 시작하지 않음
+    for i in range(len(temp)):
+        if temp[i] == 'Z':
+            result = result - int(temp[i - 1])
         else:
-            result = result - temp
+            result = result + int(temp[i])
     
     return result
