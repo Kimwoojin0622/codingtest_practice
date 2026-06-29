@@ -1,38 +1,34 @@
 def solution(polynomial):
     # polynomial은 일차항과 상수항만 존재
-    # 계수 1은 생략
-    # 결과값에 상수항은 마지막에 둡니다.
+    # 계수 1은 생략, 결과값에 상수항은 마지막에 둡니다.
     temp = polynomial.split(" + ")
     
-    x_plus = []
-    num_plus = []
-    for s in temp:
-        if 'x' in s:
-            if len(s) == 1:
-                x_plus.append('1x')
+    x_plus, num_plus = 0, 0
+    for data in temp:
+        if data[-1] == 'x':
+            if len(data) == 1:
+                x_plus += 1
             else:
-                x_plus.append(s)
+                x_plus += int(data[:-1])
         else:
-            num_plus.append(s)
+                num_plus += int(data)
     
-    chk = x_plus + num_plus
-    x_tmp = 0
-    num_tmp = 0
-    for data in chk:
-        if 'x' in data:
-            x_tmp = x_tmp + int(data[:-1])
+    if x_plus and num_plus:
+        if x_plus == 1:
+            return 'x' + ' + ' + str(num_plus)
         else:
-            num_tmp = num_tmp + int(data)
-    
-    if x_tmp > 0 and num_tmp > 0:
-        if x_tmp == 1:
-            return 'x' + ' + ' + str(num_tmp)
+            return str(x_plus) + 'x' + ' + ' + str(num_plus)
+    elif x_plus:
+        if x_plus == 1:
+            return 'x'
         else:
-            return str(x_tmp) + 'x' + ' + ' + str(num_tmp)
-    elif x_tmp > 0:
-        if x_tmp == 1:
-            return "x"
-        else:
-            return str(x_tmp) + 'x'
+            return str(x_plus) + 'x'
     else:
-        return str(num_tmp)
+        return str(num_plus) 
+    
+    # 엣지 케이스 추가
+    # "x + 1"
+    # "1"
+    # "9 + 10"
+    # "5x + 6x"
+    # "3x + 5"
