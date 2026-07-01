@@ -1,21 +1,19 @@
 def solution(chicken):
-    remain, is_True = 0, True
-    result = []
-    while is_True:
+    remain, result = 0, 0
+    while True:
         if chicken >= 10:
             remain = remain + (chicken % 10)
             chicken = chicken // 10
-            result.append(chicken)
+            result += chicken
         elif chicken <= 9:
             remain += chicken
-            is_True = False
+            break
     
-    remain
     while True:
         if remain >= 10:
-            result.append(remain // 10)
+            result += (remain // 10)
             remain = (remain % 10) + (remain // 10) 
         else:
             break
     
-    return sum(result)
+    return result
