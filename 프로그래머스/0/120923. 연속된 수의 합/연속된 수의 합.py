@@ -8,19 +8,16 @@ def solution(num, total):
         for i in range(-total + 1, total + 1):
             result.append(i)
     elif total >= num:
-        is_True, count = True, total
-        num_list = [i for i in range(num)]
-        while is_True:
+        num_list, count = [i for i in range(num)], total
+        while True:
             tmp = []
             for i in range(len(num_list)):
                 tmp.append(count - num_list[i])
             if sum(tmp) == total:
-                is_True = False
+                break
             count = count - 1
-        
-        tmp.sort()
+            
+        tmp.sort() # O(n log n)
         return tmp
     
-    result.sort()
     return result
-            
