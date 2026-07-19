@@ -1,4 +1,3 @@
-
 SELECT SALES_DATE
      , PRODUCT_ID
      , USER_ID
