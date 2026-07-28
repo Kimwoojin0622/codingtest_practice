@@ -1,12 +1,12 @@
 def solution(a, b, n):
-    result = []
     is_True = True
-    coca = 0
+    coca, result = 0, 0
+    
     while is_True:
         coca = (n // a) * b
-        result.append(coca)
+        result += coca
         n = coca + (n % a)
         if n < a:
             is_True = False
     
-    return sum(result)
+    return result
