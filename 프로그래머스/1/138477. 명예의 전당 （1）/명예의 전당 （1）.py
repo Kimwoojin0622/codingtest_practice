@@ -16,5 +16,3 @@ def solution(k, score):
                 result.append(tmp[-1])
 
     return result
-        
-        
