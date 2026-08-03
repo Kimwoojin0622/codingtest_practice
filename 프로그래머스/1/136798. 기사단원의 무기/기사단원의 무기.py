@@ -14,5 +14,3 @@ def solution(number, limit, power):
             result += power
     
     return result
-            
-        
