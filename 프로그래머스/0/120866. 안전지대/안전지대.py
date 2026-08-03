@@ -39,7 +39,3 @@ def solution(board):
                                     
     # 전체 n * n 길이에서 위험지역 차감
     return total_length - len(land_location)
-                        
-                    
-                
-    
