@@ -23,5 +23,3 @@ def solution(s):
     
     answer = "".join(result)
     return answer
-        
-        
