@@ -9,22 +9,18 @@ def solution(s):
     while len(str_list) != 0:
         # same_list가 비어있을 때, 처음 x 값을 집어넣는다.
         if not same_list:
-            value = str_list.popleft()
-            same_list.append(value)
+            same_list.append(str_list.popleft())
             continue
             
         if str_list[0] == same_list[0]:
-            value = str_list.popleft()
-            same_list.append(value)
+            same_list.append(str_list.popleft())
             continue
         else:
-            value = str_list.popleft()
-            another_list.append(value)
+            another_list.append(str_list.popleft())
         
         if len(same_list) == len(another_list):
             count += 1
-            same_list = []
-            another_list = []
+            same_list, another_list = [], []
         
     if not same_list:
         return count
