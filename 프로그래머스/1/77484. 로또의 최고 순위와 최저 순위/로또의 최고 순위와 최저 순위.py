@@ -4,13 +4,13 @@ def solution(lottos, win_nums):
     zero_cnt = lottos.count(0)
     
     # 맞춘 개수 count
-    tmp = []
+    count = 0
     for lotto in lottos:
         if lotto in win_nums:
-            tmp.append(lotto)
+            count += 1
     
     # 최고 번호 일치 갯수, 최소 번호 일치 갯수
-    correct_max_min = [len(tmp) + zero_cnt, len(tmp)]
+    correct_max_min = [count + zero_cnt, count]
     
     for i in range(2):
         if correct_max_min[i] == 6:
