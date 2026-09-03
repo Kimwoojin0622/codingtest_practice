@@ -1,6 +1,6 @@
 def solution(keymap, targets):
     key_location = {}
-    for key in keymap: # 100 * 100
+    for key in keymap: # 100 * 100 이므로 O(N^2) 가능
         for k in key:
             if k not in key_location:
                 key_location[k] = key.index(k) + 1
