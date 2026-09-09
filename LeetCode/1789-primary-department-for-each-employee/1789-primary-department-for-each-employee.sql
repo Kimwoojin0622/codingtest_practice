@@ -1,0 +1,9 @@
+SELECT EMPLOYEE_ID
+     , DEPARTMENT_ID
+FROM EMPLOYEE
+WHERE PRIMARY_FLAG = 'Y'
+   OR (EMPLOYEE_ID, DEPARTMENT_ID) IN (SELECT EMPLOYEE_ID, DEPARTMENT_ID
+                                       FROM EMPLOYEE
+                                       GROUP BY EMPLOYEE_ID
+                                         HAVING COUNT(*) < 2);
+
