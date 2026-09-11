@@ -1,16 +1,17 @@
-import math
 def solution(number, limit, power):
-    # O(N^2)은 무리
-    knight = [0] * number
-    for i in range(1, number + 1):
-        for j in range(i, number + 1, i):
-            knight[j-1] += 1
-        
+    # O(N^2) 불가
+    tmp = [1] * number
+    for i in range(1, number):
+        num = i + 1
+        for i in range(i, number, num):
+            tmp[i] += 1
+    
     result = 0
-    for k in knight:
-        if k <= limit:
-            result += k
+    for j in range(number):
+        if tmp[j] > limit:
+            tmp[j] = power
+            result += tmp[j]
         else:
-            result += power
+            result += tmp[j]
     
     return result
