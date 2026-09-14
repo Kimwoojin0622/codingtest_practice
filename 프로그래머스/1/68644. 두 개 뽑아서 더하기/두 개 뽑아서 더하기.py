@@ -1,12 +1,13 @@
 def solution(numbers):
     # O(N^2) 가능
+    multiple = set()
     
-    chk = set()
-    for i in range(len(numbers)):
-        for j in range(i+1, len(numbers)):
-            if i != j:
-                tmp = numbers[i] + numbers[j]
-                chk.add(tmp)
-    result = list(chk)
-    result.sort()
+    for i in range(0, len(numbers)):
+        for j in range(i, len(numbers)):
+            if i == j:
+                continue
+            multiple.add(numbers[i] + numbers[j])
+    
+    result = sorted(list(multiple))
+    
     return result
