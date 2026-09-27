@@ -1,3 +1,4 @@
+-- UNION 쓸 때는 ORDER BY 한 번만 가능
 SELECT *
 FROM (
     SELECT U.NAME AS 'RESULTS'
