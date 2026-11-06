@@ -9,16 +9,14 @@ public class Solution {
         for (int i = 1; i < arr.length; i++){
             if (arr[i] != arr[i-1]) {
                 li.add(arr[i]);
+                // System.out.println(li);
             }
         }
-        
-        int[] answer = new int[li.size()];
-        
-        for (int i = 0; i < answer.length; i++){
-            answer[i] = li.get(i);
+        int[] result = new int[li.size()];
+        for (int i = 0; i < li.size(); i++){
+            result[i] = li.get(i);
         }
-
-
-        return answer;
+        
+        return result;
     }
 }
