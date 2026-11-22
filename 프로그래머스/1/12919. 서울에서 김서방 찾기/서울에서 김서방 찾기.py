@@ -1,4 +1,4 @@
 def solution(seoul):
-    result = seoul.index('Kim')
+    location = seoul.index('Kim')
     
-    return "김서방은 " + str(result) + "에 있다"
+    return "김서방은 " + str(location) +'에 있다'
