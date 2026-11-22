@@ -1,6 +1,6 @@
 def solution(a, b):
-    temp = 0
+    result = 0
     for i in range(len(a)):
-        temp = temp + (a[i]*b[i])
+        result += a[i] * b[i]
     
-    return temp
+    return result
