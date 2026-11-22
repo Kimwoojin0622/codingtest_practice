@@ -1,16 +1,20 @@
 from collections import Counter
-
 def solution(participant, completion):
-    # N이 100,000이기 때문에, N^2는 시간이 초과될 수 있다.
-    # step 1. participant의 각 value에 +1씩 -> O(N)
-    chk = Counter(participant)
+    # participant (마라톤에 참여한 선수들의 이름이 담긴 배열)
+    # completion (완주한 선수들의 이름이 담긴 배열)
+
+    # 문제 : 완주하지 못한 선수의 이름을 return 하도록 solution 함수를 작성
+
+    check = {}
+    for p in participant:
+        if p not in check:
+            check[p] = 1
+        else:
+            check[p] += 1
     
-    # step 2. completion을 돌면서 value를 -1씩하고, -> O(N-1)
-    for s in completion:
-        chk[s] = chk[s] - 1
-        
-    # step 3. 만약, value가 1과 같다면 key값을 return -> O(N) (이건 최악의 경우)
-    for s in chk:
-        if chk[s] == 1:
-            return s
-    # 끝
+    for c in completion:
+        check[c] = check[c] - 1
+    
+    for person in check.items():
+        if person[1] == 1:
+            return person[0]
