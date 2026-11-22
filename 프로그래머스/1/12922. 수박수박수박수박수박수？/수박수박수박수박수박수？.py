@@ -1,7 +1,9 @@
 def solution(n):
-    tmp = ['수','박']
-    result = []
-    for i in range(n):
-        result.append(tmp[i % 2])
+    result = ''
+    watermelon = ['수', '박']
     
-    return "".join(result)
+    for i in range(n):
+        tmp = i % 2
+        result += watermelon[tmp]
+    
+    return result
