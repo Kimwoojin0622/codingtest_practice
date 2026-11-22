@@ -1,9 +1,11 @@
 def solution(n):
-    stN = str(n)
+    st = str(n)
+    value = []
+    for s in st:
+        value.append(s)
     
-    result = []
-    for i in range(len(stN) - 1, -1, -1):
-        tmp = int(stN[i])
-        result.append(tmp)
+    result = value[::-1]
+    for i in range(len(result)):
+        result[i] = int(result[i])
     
     return result
