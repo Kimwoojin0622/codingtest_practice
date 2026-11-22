@@ -1,11 +1,15 @@
 def solution(n):
-    stN = str(n)
-    tmp = [int(s) for s in stN]
-    tmp.sort(reverse=True)
+    # n 8000000000
+    
+    st = str(n)
+    value = []
+    for s in st:
+        value.append(s)
+    
+    tmp_list = sorted(value, reverse=True)
     
     result = ''
-    for s in tmp:
-        t = str(s)
+    for t in tmp_list:
         result += t
     
     return int(result)
