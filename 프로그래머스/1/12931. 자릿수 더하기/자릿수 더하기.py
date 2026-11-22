@@ -1,8 +1,8 @@
 def solution(N):
-    stN = str(N)
+    st = str(N)
+    result = 0
+    for s in st:
+        tmp = int(s)
+        result += tmp
     
-    result = []
-    for data in stN:
-        result.append(int(data))
-    
-    return sum(result)
+    return result
