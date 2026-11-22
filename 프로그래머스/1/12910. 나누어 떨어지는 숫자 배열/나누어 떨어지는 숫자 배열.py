@@ -1,11 +1,12 @@
 def solution(arr, divisor):
-    result = []
-    for n in arr:
-        if n % divisor == 0:
-            result.append(n)
+    tmp = []
+    for a in arr:
+        if a % divisor == 0:
+            tmp.append(a)
     
-    if result:
-        result.sort()
-        return result
-    else:
+    if not tmp:
         return [-1]
+    else:
+        result = sorted(tmp)
+        return result
+    
