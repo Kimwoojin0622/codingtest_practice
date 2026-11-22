@@ -1,9 +1,8 @@
 def solution(phone_number):
-    result = ''
-    for i in range(len(phone_number)):
-        if i < len(phone_number) - 4:
-            result += '*'
-        else:
-            result += phone_number[i]
+    length = len(phone_number)
     
-    return result
+    result = ''
+    for i in range(0, length-4):
+        result += '*'
+    
+    return result + phone_number[length-4:]
