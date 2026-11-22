@@ -1,13 +1,12 @@
 def solution(s):
-    # 0 P의 개수, 1 Y의 개수
-    result = [0, 0]
-    for data in s:
-        if data.lower() == 'p':
-            result[0] += 1
-        elif data.lower() == 'y':
-            result[1] += 1
+    chk = {'p':0, 'y':0}
     
-    if result[0] == result[1]:
+    s = s.lower()
+    for data in s:
+        if data == 'p' or data == 'y':
+            chk[data] += 1
+    
+    if chk['p'] == chk['y']:
         return True
     else:
         return False
