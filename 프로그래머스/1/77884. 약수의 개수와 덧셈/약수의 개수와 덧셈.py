@@ -1,16 +1,20 @@
 def solution(left, right):
-    # O(N^2) 가능
+    # O(N^3)은 위태
+    check = {}
+    for i in range(left, right+1):
+        if i not in check:
+            check[i] = 0
+    
+    for data in check.items():
+        for i in range(1, data[0]+1):
+            if data[0] % i == 0:
+                check[data[0]] += 1
+
     result = 0
-    for i in range(left, right + 1):
-        tmp = []
-        for j in range(1, i + 1):
-            if i % j == 0:
-                tmp.append(j)
-        # 약수의 개수
-        if len(tmp) % 2 == 0:
-            result += i
+    for data in check.items():
+        if data[1] % 2 == 0:
+            result += data[0]
         else:
-            result -= i
+            result -= data[0]
     
     return result
-            
