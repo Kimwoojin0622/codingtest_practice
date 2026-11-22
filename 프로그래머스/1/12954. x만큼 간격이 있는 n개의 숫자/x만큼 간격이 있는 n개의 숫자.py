@@ -1,13 +1,13 @@
 def solution(x, n):
-    answer = []
+    result = []
     if x > 0:
         for i in range(x, x*n+1, x):
-            answer.append(i)
-    elif x == 0:
-        return [0] * n
+            result.append(i)
+    elif x < 0:
+        for i in range(x, x*n-1, x):
+            result.append(i)
     else:
-        x = x * -1
-        for i in range(x, x*n+1, x):
-            answer.append(i * -1)
+        return [0] * n
     
-    return answer
+    return result
+        
