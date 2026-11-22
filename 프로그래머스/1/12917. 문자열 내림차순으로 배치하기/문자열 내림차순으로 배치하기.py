@@ -1,12 +1,13 @@
 def solution(s):
-    ups, lows = [], [] # ups는 대문자 담을 리스트, lows는 소문자 담을 리스트
-    for data in s:
-        if data.lower() == data:
-            lows.append(data)
+    upper_list = []
+    lower_list = []
+    for st in s:
+        if st == st.upper():
+            upper_list.append(st)
         else:
-            ups.append(data)
+            lower_list.append(st)
     
-    lows.sort(reverse = True)
-    ups.sort(reverse = True)
+    up = sorted(upper_list, reverse=True)
+    lo = sorted(lower_list, reverse=True)
     
-    return "".join(lows) + "".join(ups)
+    return "".join(lo) + "".join(up)
