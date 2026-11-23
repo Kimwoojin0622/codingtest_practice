@@ -1,8 +1,10 @@
 def solution(sizes):
-    # 최대 N = 10,000
-    max_value, min_value = [], []
+    max_values = 0
+    min_values = 0
     for size in sizes:
-        max_value.append(max(size))
-        min_value.append(min(size))
+        if max(size) > max_values:
+            max_values = max(size)
+        if min(size) > min_values:
+            min_values = min(size)
     
-    return max(max_value) * max(min_value)
+    return max_values * min_values
