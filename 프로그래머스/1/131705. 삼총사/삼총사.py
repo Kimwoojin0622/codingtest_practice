@@ -1,14 +1,11 @@
 def solution(number):
-    # number의 길이가 13! O(N^3)도 가능할듯..
-    result = []
-
-    for i in range(len(number) - 1):
+    result = 0
+    
+    for i in range(len(number)):
         for j in range(i + 1, len(number)):
             for t in range(j + 1, len(number)):
-                tmp = number[i] + number[j] + number[t]
-                if tmp == 0:
-                    result.append([number[i], number[j], number[t]])
+                # print(number[i], number[j], number[t])
+                if number[i] + number[j] + number[t] == 0:
+                    result += 1
     
-    return len(result)
-                    
-            
+    return result
