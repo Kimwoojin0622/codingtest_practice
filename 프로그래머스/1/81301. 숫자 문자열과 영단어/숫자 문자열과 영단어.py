@@ -1,5 +1,5 @@
 def solution(s):
-    table = {
+    number_eng = {
         'zero' : 0,
         'one' : 1,
         'two' : 2,
@@ -9,19 +9,19 @@ def solution(s):
         'six' : 6,
         'seven' : 7,
         'eight' : 8,
-        'nine' : 9,
+        'nine' : 9
     }
     
-    tmp_list = []
+    result = ''
     tmp = ''
-    for data in s:
-        if data.isdigit():
-            tmp_list.append(str(data))
-        else:
-            tmp = tmp + data
-            if tmp in table.keys():
-                tmp_list.append(str(table[tmp]))
-                tmp = ''
     
-    result = "".join(tmp_list)
+    for st in s:
+        if not st.isdigit():
+            tmp += st
+            if tmp in number_eng.keys():
+                result += str(number_eng[tmp])
+                tmp = ''
+        else:
+            result += st
+    
     return int(result)
