@@ -1,20 +1,14 @@
 def solution(n):
+    result = 0
     tmp = []
-    # 앞뒤 반전 3진법 만들기
-    while True:
-        if n >= 3:
-            div = n % 3
-            tmp.append(div)
-            n = n // 3
-        elif n < 3:
-            tmp.append(n)
-            break
+    while n != 0:
+        num = n % 3
+        tmp.append(num)
+        n = n // 3
     
-    # 10진법으로 변환
-    length, result = len(tmp) - 1,  0
-    for n in tmp:
-        cal = n * (3 ** length)
-        length -= 1
-        result += cal
-        
+    tmp = tmp[::-1]
+    for i in range(len(tmp)):
+        num = tmp[i] * (3 ** i)
+        result += num
+    
     return result
