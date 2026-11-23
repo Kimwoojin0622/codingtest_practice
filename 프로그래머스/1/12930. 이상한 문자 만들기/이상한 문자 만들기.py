@@ -1,16 +1,16 @@
 def solution(s):
-    i, chk = 0, 0
-    result = []
-    while i < len(s):
-        if s[i] == ' ':
-            result.append(s[i])
-            chk = 0
-        elif chk % 2 == 0:
-            result.append(s[i].upper())
-            chk += 1
-        else:
-            result.append(s[i].lower())
-            chk += 1
-        i += 1
+    s_list = []
     
-    return "".join(result)
+    i = 0
+    for st in s:
+        if st == " ":
+            s_list.append(" ")
+            i = 0
+        elif i % 2 == 0:
+            s_list.append(st.upper())
+            i += 1
+        else:
+            s_list.append(st.lower())
+            i += 1
+    
+    return "".join(s_list)
