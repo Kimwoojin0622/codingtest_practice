@@ -1,15 +1,12 @@
 def solution(s):
-    s, result = s[::-1], []
-    
+    tmp = {}
+    result = []
     for i in range(len(s)):
-        cnt = 0
-        for j in range(i+1, len(s)):
-            if s[i] == s[j]:
-                result.append(j - i)
-                break
-            else:
-                cnt += 1
-        if cnt == len(s) - i - 1:
+        if s[i] not in tmp:
+            tmp[s[i]] = i
             result.append(-1)
-        
-    return result[::-1]
+        else:
+            result.append(i - tmp[s[i]])
+            tmp[s[i]] = i
+
+    return result
