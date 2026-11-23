@@ -1,5 +1,7 @@
-a, b = map(int, input().split())
+a, b = map(int, input().split(' '))
 
-for i in range(b):
-    tmp = '*' * a
-    print(tmp)
+# b행 a열
+
+stars = '*' * a
+for _ in range(b):
+    print(stars)
