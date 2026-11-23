@@ -1,12 +1,10 @@
 def solution(s):
-    for data in s:
-        tmp = ord(data)
-        print(tmp)
-        if tmp >= 65:
-            return False
-    
-    # 길이 조건
-    if len(s) == 4 or len(s) == 6:
-        return True
+    length = len(s)
+    if length == 4 or length == 6:
+        for st in s:
+            if not st.isdigit():
+                return False
     else:
         return False
+    
+    return True
