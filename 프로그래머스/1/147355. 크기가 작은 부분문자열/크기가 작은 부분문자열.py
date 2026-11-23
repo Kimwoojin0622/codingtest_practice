@@ -1,9 +1,27 @@
 def solution(t, p):
-    result, length = 0, len(p)
+    # 크기가 작은 부분 문자열
     
-    for i in range(0, len(t) - length + 1):
-        value = int(t[i:i+length])
-        if value <= int(p):
+    # 숫자로 이루어진 문자열 t와 p
+    # t - "3141592" / p - '271'
+    
+    # 문제 : t에서 p와 길이가 같은 부분문자열 중에서, 이 부분 문자열이 나타내는 수가 p가 나타내는 수보다 작거나 같은 것이 나오는 횟수를 return
+      # 314가 271보다 작거나 같나 -> 141이 271보다 작거나 같나 -> 415가 271보다 작거나 같나
+        
+    # 1. 최종 return을 할 result 변수를 생성
+    
+    # 2. for문을 통해서 t의 길이에서 p의 길이만큼 뺀 숫자에 +1을 한 만큼 for문을 돌림
+      # 7 - 3 + 1을 해야지만 0 1 2 3 4까지 돌릴 수 있습니다. 4까지 돌리는 이유는, 5부터는 p의 길이인 3을 기준으로 숫자를 만들 수 없기 때문입니다. 3141592에서 5 인덱스를 기준으로 p의 길이인 3글자를 만들려고 한다면 92 밖에 되지 않고, index를 넘어가게 됩니다.
+
+    # 3. 다음으로는 num이라는 변수에 t의 값 중에서 i 번째 부터 i + p의 길이까지 슬라이싱을 진행
+    
+    # 4. 슬라이싱을 진행한 값을 int()를 통해 형변환을 하고, p의 값보다 작거나 같으면 result에 +1을 진행
+    
+    # 5. 마지막으로 result의 값을 return
+    
+    result = 0
+    for i in range(0, len(t)-len(p)+1):
+        num = t[i:i+len(p)]
+        if int(num) <= int(p):
             result += 1
     
     return result
