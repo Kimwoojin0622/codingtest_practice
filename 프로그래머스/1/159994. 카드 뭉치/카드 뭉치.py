@@ -12,11 +12,7 @@ def solution(cards1, cards2, goal):
     cards2_deque = deque(cards2)
     goal = deque(goal)
     
-    c1_length = len(cards1_deque)
-    c2_length = len(cards2_deque)
-    is_True = True
-    
-    while is_True:
+    while True:
         if not goal:
             break
             
@@ -28,8 +24,7 @@ def solution(cards1, cards2, goal):
             cards2_deque.popleft()
         else:
             return 'No'
-        
-    
+
     return 'Yes'
     
     
